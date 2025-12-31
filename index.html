@@ -2,36 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hamid Ahmadi | Web Developer</title>
-  <meta name="description" content="Hamid Ahmadi - Junior Web Developer. HTML, CSS, JavaScript. Based in the UK. Available for freelance & junior roles." />
 
   <style>
-    :root{
-      --bg: #0f172a;
-      --card: #111827;
-      --card2: rgba(255,255,255,0.06);
-      --text: #e5e7eb;
-      --muted: rgba(229,231,235,0.75);
-      --shadow: 0 24px 60px rgba(0,0,0,0.45);
-      --radius: 18px;
-      --green: #16a34a;
-      --blue: #2563eb;
-      --border: rgba(255,255,255,0.10);
+    * {
+      box-sizing: border-box;
     }
 
-    *{ box-sizing: border-box; }
-    body{
+    body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(1200px 700px at 20% 10%, rgba(37,99,235,0.25), transparent 55%),
-                  radial-gradient(900px 600px at 80% 0%, rgba(22,163,74,0.22), transparent 50%),
-                  var(--bg);
-      color: var(--text);
-      min-height: 100vh;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: #e5e7eb;
     }
 
-    .container{
+    .container {
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -39,155 +25,190 @@
       padding: 20px;
     }
 
-    .card{
-      width: min(560px, 96vw);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 34px 22px 22px;
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 18px;
+      max-width: 460px;
+      width: 100%;
       text-align: center;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
     }
 
-    h1{
-      margin: 0 0 10px;
-      font-size: clamp(32px, 5vw, 44px);
-      letter-spacing: 0.4px;
+    h1 {
+      margin-bottom: 8px;
+      font-size: 28px;
+      color: #f8fafc;
     }
 
-    .title{
+    h2 {
       margin: 0;
       font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      opacity: 0.95;
+      font-weight: normal;
+      color: #94a3b8;
     }
 
-    .skills{
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.5;
+    .stack {
+      margin: 14px 0;
+      font-size: 14px;
+      color: #cbd5f5;
     }
 
-    .bio{
-      margin: 10px auto 0;
-      color: rgba(229,231,235,0.85);
+    .bio {
+      margin: 18px 0;
       font-size: 14px;
       line-height: 1.6;
-      max-width: 46ch;
+      color: #e5e7eb;
     }
 
-    .meta{
-      margin: 10px 0 0;
-      color: var(--muted);
+    .location {
+      margin-bottom: 20px;
       font-size: 13px;
+      color: #94a3b8;
     }
 
-    .buttons{
-      margin-top: 18px;
+    .buttons {
       display: flex;
       gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 20px;
     }
 
-    .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-width: 150px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      color: white;
+    .btn {
+      padding: 12px 20px;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.12s ease, filter 0.12s ease;
-      user-select: none;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .btn:active{ transform: scale(0.98); }
-    .btn:hover{ filter: brightness(1.06); }
-
-    .btn-green{ background: var(--green); }
-    .btn-blue{ background: var(--blue); }
-    .btn-ghost{
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     }
 
-    .note{
-      margin-top: 16px;
-      font-size: 12px;
-      color: rgba(229,231,235,0.65);
+    .whatsapp {
+      background: #16a34a;
     }
 
-    footer{
+    .email {
+      background: #2563eb;
+    }
+
+    .projects-btn {
+      background: #0f766e;
+    }
+
+    .projects {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .projects h3 {
+      text-align: center;
+      margin-bottom: 12px;
+      color: #f8fafc;
+    }
+
+    .project {
+      background: rgba(30,41,59,0.8);
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .project span {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .tip {
       margin-top: 18px;
       font-size: 12px;
-      color: rgba(229,231,235,0.55);
+      color: #94a3b8;
     }
 
-    .pill{
-      display:inline-block;
-      margin-top: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--border);
+    footer {
+      margin-top: 20px;
       font-size: 12px;
-      color: rgba(229,231,235,0.75);
+      color: #64748b;
     }
   </style>
 </head>
-
 <body>
+
   <div class="container">
-    <main class="card">
+    <div class="card">
+
       <h1>Hamid Ahmadi</h1>
+      <h2>Junior Web Developer</h2>
 
-      <p class="title">Junior Web Developer</p>
+      <div class="stack">
+        HTML • CSS • JavaScript
+      </div>
 
-      <p class="skills">HTML • CSS • JavaScript</p>
+      <div class="bio">
+        I build clean, responsive websites and simple web apps.
+        If you need a fast landing page, a personal portfolio,
+        or a small JavaScript project, feel free to contact me.
+      </div>
 
-      <p class="bio">
-        I build clean, responsive websites and simple web apps. If you want a fast landing page,
-        a portfolio site, or a small JavaScript project, message me.
-      </p>
-
-      <p class="meta">Based in the UK • Available for freelance & junior roles</p>
+      <div class="location">
+        Based in the UK • Available for freelance & junior roles
+      </div>
 
       <div class="buttons">
-        <!-- WhatsApp: use wa.me (best on mobile + desktop) -->
-        <a class="btn btn-green"
-           href="https://wa.me/447707546682?text=Hi%20Hamid%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project."
-           target="_blank" rel="noopener">
+        <a class="btn whatsapp"
+           href="https://wa.me/447707546682?text=Hi%20Hamid,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project."
+           target="_blank">
           WhatsApp
         </a>
 
-        <!-- Email -->
-        <a class="btn btn-blue"
-           href="mailto:hamidrezaahmadiuk@gmail.com?subject=Project%20Inquiry&body=Hi%20Hamid%2C%0A%0AI%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project.%0A%0AThanks%2C"
-           target="_blank" rel="noopener">
+        <a class="btn email"
+           href="mailto:hamidrezaahmadiuk@gmail.com">
           Email
         </a>
 
-        <!-- Projects: placeholder (later you can link to /projects.html or #projects) -->
-        <a class="btn btn-ghost" href="#projects">Projects</a>
+        <a class="btn projects-btn" href="#projects">
+          Projects
+        </a>
       </div>
 
-      <span class="pill" id="projects">Projects (coming next)</span>
+      <div class="projects" id="projects">
+        <h3>Projects</h3>
 
-      <p class="note">
-        Tip: If WhatsApp doesn’t open inside some in-app browsers, open the link in your external browser.
-      </p>
+        <div class="project">
+          <strong>Portfolio Website</strong><br>
+          <span>Responsive personal portfolio built with HTML & CSS</span>
+        </div>
 
-      <footer>© 2025 Hamid Ahmadi</footer>
-    </main>
+        <div class="project">
+          <strong>Landing Page</strong><br>
+          <span>Modern landing page layout with clean UI</span>
+        </div>
+
+        <div class="project">
+          <strong>To-Do App</strong><br>
+          <span>JavaScript app with add, delete & local storage</span>
+        </div>
+      </div>
+
+      <div class="tip">
+        Tip: If WhatsApp doesn’t open inside some in-app browsers,
+        choose “Open in external browser”.
+      </div>
+
+      <footer>
+        © 2025 Hamid Ahmadi
+      </footer>
+
+    </div>
   </div>
+
 </body>
 </html>
