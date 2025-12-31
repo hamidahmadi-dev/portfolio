@@ -4,114 +4,190 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hamid Ahmadi | Web Developer</title>
+  <meta name="description" content="Hamid Ahmadi - Junior Web Developer. HTML, CSS, JavaScript. Based in the UK. Available for freelance & junior roles." />
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f6f8;
-      color: #333;
+    :root{
+      --bg: #0f172a;
+      --card: #111827;
+      --card2: rgba(255,255,255,0.06);
+      --text: #e5e7eb;
+      --muted: rgba(229,231,235,0.75);
+      --shadow: 0 24px 60px rgba(0,0,0,0.45);
+      --radius: 18px;
+      --green: #16a34a;
+      --blue: #2563eb;
+      --border: rgba(255,255,255,0.10);
     }
 
-    .container {
+    *{ box-sizing: border-box; }
+    body{
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(37,99,235,0.25), transparent 55%),
+                  radial-gradient(900px 600px at 80% 0%, rgba(22,163,74,0.22), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container{
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
 
-    .card {
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      max-width: 420px;
-      width: 100%;
+    .card{
+      width: min(560px, 96vw);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 22px 22px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
     }
 
-    h1 {
-      margin-bottom: 10px;
-      color: #2c3e50;
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(32px, 5vw, 44px);
+      letter-spacing: 0.4px;
     }
 
-    p {
-      margin: 8px 0;
-      color: #555;
+    .title{
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      opacity: 0.95;
     }
 
-    .buttons {
-      margin-top: 25px;
+    .skills{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .bio{
+      margin: 10px auto 0;
+      color: rgba(229,231,235,0.85);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 46ch;
+    }
+
+    .meta{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .buttons{
+      margin-top: 18px;
       display: flex;
       gap: 12px;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .btn {
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 150px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      color: white;
       text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      color: #fff;
-      transition: 0.3s;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.12s ease, filter 0.12s ease;
+      user-select: none;
     }
 
-    .btn-whatsapp {
-      background: #25D366;
+    .btn:active{ transform: scale(0.98); }
+    .btn:hover{ filter: brightness(1.06); }
+
+    .btn-green{ background: var(--green); }
+    .btn-blue{ background: var(--blue); }
+    .btn-ghost{
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
     }
 
-    .btn-email {
-      background: #3498db;
+    .note{
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(229,231,235,0.65);
     }
 
-    .btn-projects {
-      background: #2ecc71;
+    footer{
+      margin-top: 18px;
+      font-size: 12px;
+      color: rgba(229,231,235,0.55);
     }
 
-    .btn:hover {
-      opacity: 0.85;
-    }
-
-    footer {
-      margin-top: 25px;
-      font-size: 14px;
-      color: #777;
+    .pill{
+      display:inline-block;
+      margin-top: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: rgba(229,231,235,0.75);
     }
   </style>
 </head>
-<body>
 
+<body>
   <div class="container">
-    <div class="card">
+    <main class="card">
       <h1>Hamid Ahmadi</h1>
-      <p><strong>Junior Web Developer</strong></p>
-      <p>HTML • CSS • JavaScript</p>
-      <p>Based in UK · Open to freelance & junior roles</p>
+
+      <p class="title">Junior Web Developer</p>
+
+      <p class="skills">HTML • CSS • JavaScript</p>
+
+      <p class="bio">
+        I build clean, responsive websites and simple web apps. If you want a fast landing page,
+        a portfolio site, or a small JavaScript project, message me.
+      </p>
+
+      <p class="meta">Based in the UK • Available for freelance & junior roles</p>
 
       <div class="buttons">
-        <a class="btn btn-whatsapp" 
-           href="https://api.whatsapp.com/send/?phone=447707546682&text=Hi%20Hamid,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project." 
-           target="_blank">
+        <!-- WhatsApp: use wa.me (best on mobile + desktop) -->
+        <a class="btn btn-green"
+           href="https://wa.me/447707546682?text=Hi%20Hamid%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project."
+           target="_blank" rel="noopener">
           WhatsApp
         </a>
 
-        <a class="btn btn-email" 
-           href="mailto:hamidrezaahmadiuk@gmail.com">
+        <!-- Email -->
+        <a class="btn btn-blue"
+           href="mailto:hamidrezaahmadiuk@gmail.com?subject=Project%20Inquiry&body=Hi%20Hamid%2C%0A%0AI%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project.%0A%0AThanks%2C"
+           target="_blank" rel="noopener">
           Email
         </a>
 
-        <a class="btn btn-projects" href="#projects">
-          Projects
-        </a>
+        <!-- Projects: placeholder (later you can link to /projects.html or #projects) -->
+        <a class="btn btn-ghost" href="#projects">Projects</a>
       </div>
 
-      <footer>
-        © 2025 Hamid Ahmadi
-      </footer>
-    </div>
-  </div>
+      <span class="pill" id="projects">Projects (coming next)</span>
 
+      <p class="note">
+        Tip: If WhatsApp doesn’t open inside some in-app browsers, open the link in your external browser.
+      </p>
+
+      <footer>© 2025 Hamid Ahmadi</footer>
+    </main>
+  </div>
 </body>
 </html>
