@@ -2,192 +2,342 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hamid Ahmadi | Web Developer</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamid Ahmadi | Junior Web Developer</title>
+  <meta name="description" content="Junior Web Developer in the UK. I build clean, responsive websites and simple web apps with HTML, CSS, and JavaScript." />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
+    :root{
+      --bg1:#070a2a;
+      --bg2:#0b1a3a;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.10);
+      --text:#e9eeff;
+      --muted: rgba(233,238,255,0.75);
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --blue:#1f4fff;
+      --green:#1f7a2f;
+      --green2:#2aa84a;
+      --radius: 20px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 15%, rgba(68,114,255,0.35), transparent 60%),
+        radial-gradient(700px 500px at 85% 25%, rgba(40,220,120,0.18), transparent 55%),
+        linear-gradient(160deg, var(--bg1), var(--bg2));
+      padding: 28px 14px;
+    }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
 
-    body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top, #0b1a3a, #020617);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #e5e7eb;
+    /* HERO */
+    .hero{
+      padding: 26px 18px;
+      text-align:center;
     }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 40px 30px;
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
-
-    .role {
-      font-size: 15px;
-      color: #93c5fd;
-      margin-bottom: 14px;
-    }
-
-    .skills {
-      font-size: 14px;
-      opacity: 0.9;
-      margin-bottom: 18px;
-    }
-
-    .bio {
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 16px;
-      color: #d1d5db;
-    }
-
-    .location {
+    .badge{
+      display:inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
       font-size: 13px;
-      margin-bottom: 26px;
-      color: #9ca3af;
+      letter-spacing: 0.2px;
+      margin-bottom: 12px;
+    }
+    h1{
+      margin: 6px 0 6px;
+      font-size: 34px;
+      line-height:1.1;
+      letter-spacing: 0.2px;
+    }
+    .role{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .skills{
+      margin: 10px 0 0;
+      color: rgba(233,238,255,0.85);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .bio{
+      max-width: 720px;
+      margin: 14px auto 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+    .meta{
+      margin-top: 10px;
+      color: rgba(233,238,255,0.7);
+      font-size: 13px;
     }
 
-    .buttons {
-      display: flex;
+    .actions{
+      display:flex;
       gap: 12px;
-      justify-content: center;
-      margin-bottom: 28px;
+      justify-content:center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .btn{
+      appearance:none;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      color: white;
+      text-decoration:none;
+      min-width: 150px;
+      text-align:center;
+      transition: transform .08s ease, filter .12s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+    }
+    .btn:active{transform: scale(0.98)}
+    .btn-green{
+      background: linear-gradient(180deg, var(--green2), var(--green));
+    }
+    .btn-blue{
+      background: linear-gradient(180deg, #2a5cff, #1738d8);
+    }
+    .btn-dark{
+      background: rgba(255,255,255,0.06);
+    }
+    .btn:hover{filter: brightness(1.08)}
+
+    /* SECTIONS */
+    .grid{
+      display:grid;
+      gap: 14px;
+    }
+    @media (min-width: 760px){
+      .grid{grid-template-columns: 1.2fr 0.8fr;}
+      .hero{padding: 34px 26px;}
+      h1{font-size: 40px;}
+    }
+
+    .section{
+      padding: 18px;
+    }
+    .section h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: 0.2px;
+    }
+    .section p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* PROJECTS */
+    .projects{
+      padding: 18px;
+    }
+    .projects h2{
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+    .project{
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      display:grid;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .project:last-child{margin-bottom:0}
+    .project-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
       flex-wrap: wrap;
     }
-
-    .btn {
-      padding: 12px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #fff;
+    .project-title strong{font-size: 16px}
+    .tag{
+      font-size: 12px;
+      color: rgba(233,238,255,0.75);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    .project p{
+      margin:0;
+      color: var(--muted);
+      line-height: 1.65;
       font-size: 14px;
-      font-weight: bold;
-      transition: transform 0.2s, opacity 0.2s;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
+    .links{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-
-    .whatsapp {
-      background: #16a34a;
-    }
-
-    .email {
-      background: #2563eb;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      margin: 24px 0;
-    }
-
-    h2 {
-      font-size: 18px;
-      margin-bottom: 14px;
-    }
-
-    .project {
-      background: rgba(255,255,255,0.06);
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 12px;
-      text-align: left;
-    }
-
-    .project h3 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .project p {
+    .link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(233,238,255,0.9);
+      text-decoration:none;
+      font-weight: 700;
       font-size: 13px;
-      line-height: 1.5;
-      color: #d1d5db;
     }
+    .link:hover{filter: brightness(1.08)}
 
-    .tech {
-      margin-top: 6px;
+    footer{
+      text-align:center;
+      color: rgba(233,238,255,0.6);
       font-size: 12px;
-      color: #93c5fd;
+      padding: 8px 0 2px;
     }
-
-    .coming {
+    .tip{
+      margin-top: 14px;
+      color: rgba(233,238,255,0.65);
       font-size: 12px;
-      opacity: 0.7;
-      margin-top: 8px;
-    }
-
-    .footer {
-      margin-top: 26px;
-      font-size: 12px;
-      opacity: 0.6;
     }
   </style>
 </head>
-
 <body>
 
-  <div class="card">
-    <h1>Hamid Ahmadi</h1>
-    <div class="role">Junior Web Developer</div>
+  <div class="wrap">
+    <div class="card hero">
+      <div class="badge">Based in the UK • Open to freelance & junior roles</div>
 
-    <div class="skills">HTML • CSS • JavaScript</div>
+      <h1>Hamid Ahmadi</h1>
+      <p class="role">Junior Web Developer</p>
+      <p class="skills">HTML • CSS • JavaScript</p>
 
-    <p class="bio">
-      I build clean, responsive websites and simple web applications.
-      If you need a fast landing page, a portfolio site, or a small JavaScript project,
-      feel free to message me.
-    </p>
-
-    <div class="location">
-      Based in the UK • Available for freelance & junior roles
-    </div>
-
-    <div class="buttons">
-      <a class="btn whatsapp" href="https://wa.me/447707546682" target="_blank">
-        WhatsApp
-      </a>
-      <a class="btn email" href="mailto:hamidrezaahmadiuk@gmail.com">
-        Email
-      </a>
-    </div>
-
-    <hr />
-
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>Business Landing Page</h3>
-      <p>
-        A fast, responsive landing page for small businesses.
-        Designed with clean UI, mobile-first layout, and conversion-focused structure.
+      <p class="bio">
+        I build clean, responsive websites and simple web apps.
+        If you need a fast landing page, a small business website, or a JavaScript feature, message me.
       </p>
-      <div class="tech">HTML, CSS</div>
+
+      <div class="actions">
+        <!-- WhatsApp: replace phone number if needed -->
+        <a class="btn btn-green"
+           href="https://wa.me/447707546682?text=Hi%20Hamid%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project."
+           target="_blank" rel="noopener">
+          WhatsApp
+        </a>
+
+        <!-- Email: replace email if needed -->
+        <a class="btn btn-blue"
+           href="mailto:hamidrezahmadiuk@gmail.com?subject=Website%20Project&body=Hi%20Hamid%2C%0A%0AI%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk%20about%20a%20project.%0A%0AThanks!"
+           target="_blank" rel="noopener">
+          Email
+        </a>
+
+        <a class="btn btn-dark" href="#projects">Projects</a>
+      </div>
+
+      <div class="tip">
+        Tip: If WhatsApp doesn’t open inside some in-app browsers, open the link in your external browser.
+      </div>
     </div>
 
-    <div class="coming">More projects coming soon…</div>
+    <div class="grid">
+      <div class="card projects" id="projects">
+        <h2>Projects</h2>
 
-    <div class="footer">© 2025 Hamid Ahmadi</div>
+        <div class="project">
+          <div class="project-title">
+            <strong>Business Landing Page</strong>
+            <span class="tag">HTML + CSS</span>
+          </div>
+          <p>
+            A modern landing page layout with a hero section, features, and responsive design.
+            Perfect for small businesses.
+          </p>
+          <div class="links">
+            <!-- Replace with your real demo link later -->
+            <a class="link" href="#" onclick="alert('Add your demo link here'); return false;">Live Demo</a>
+            <!-- Replace with your repo link later if needed -->
+            <a class="link" href="https://github.com/hamidahmadi-dev/portfolio" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-title">
+            <strong>To-Do App</strong>
+            <span class="tag">JavaScript</span>
+          </div>
+          <p>
+            A simple to-do app with add, complete, delete, and clear all. (You can upgrade it with localStorage.)
+          </p>
+          <div class="links">
+            <a class="link" href="#" onclick="alert('Add your demo link here'); return false;">Live Demo</a>
+            <a class="link" href="https://github.com/hamidahmadi-dev/portfolio" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-title">
+            <strong>Portfolio Card</strong>
+            <span class="tag">Responsive</span>
+          </div>
+          <p>
+            A clean responsive profile card with contact buttons and a projects section.
+          </p>
+          <div class="links">
+            <a class="link" href="#" onclick="alert('Add your demo link here'); return false;">Live Demo</a>
+            <a class="link" href="https://github.com/hamidahmadi-dev/portfolio" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card section">
+        <h2>What I can build</h2>
+        <p>
+          • Landing pages for local businesses<br/>
+          • Simple websites (Home / About / Contact)<br/>
+          • Small JavaScript features (forms, UI, validation)<br/>
+          • Mobile-friendly responsive layouts
+        </p>
+      </div>
+
+      <div class="card section">
+        <h2>Next upgrade (for more income)</h2>
+        <p>
+          Step 1: Add 1 real business landing page demo.<br/>
+          Step 2: Add localStorage to To-Do App.<br/>
+          Step 3: Add a short CV + LinkedIn link.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      © 2025 Hamid Ahmadi
+    </footer>
   </div>
 
 </body>
