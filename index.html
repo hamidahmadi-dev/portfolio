@@ -2,18 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hamid Ahmadi | Web Developer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #f4f6f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      color: #333;
+    }
+
+    .container {
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
 
     .card {
@@ -21,7 +26,7 @@
       padding: 40px;
       border-radius: 16px;
       max-width: 420px;
-      width: 90%;
+      width: 100%;
       text-align: center;
       box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
@@ -32,62 +37,81 @@
     }
 
     p {
+      margin: 8px 0;
       color: #555;
-      margin-bottom: 25px;
     }
 
-    .buttons a {
-      display: inline-block;
-      margin: 8px;
-      padding: 12px 22px;
-      border-radius: 8px;
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
       text-decoration: none;
-      color: white;
-      font-size: 16px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #fff;
+      transition: 0.3s;
     }
 
-    .whatsapp { background: #25D366; }
-    .email { background: #3498db; }
-    .projects { background: #2ecc71; }
+    .btn-whatsapp {
+      background: #25D366;
+    }
 
-    .buttons a:hover {
-      opacity: 0.9;
+    .btn-email {
+      background: #3498db;
+    }
+
+    .btn-projects {
+      background: #2ecc71;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
     }
 
     footer {
       margin-top: 25px;
       font-size: 14px;
-      color: #888;
+      color: #777;
     }
   </style>
 </head>
-
 <body>
-  <div class="card">
-    <h1>Hamid Ahmadi</h1>
-    <p>Junior Web Developer | HTML, CSS, JavaScript</p>
 
-    <div class="buttons">
-      <a class="whatsapp"
-         href="https://api.whatsapp.com/send?phone=447707546682&text=Hi%20Hamid,%20I%20saw%20your%20portfolio"
-         target="_blank">
-         WhatsApp
-      </a>
+  <div class="container">
+    <div class="card">
+      <h1>Hamid Ahmadi</h1>
+      <p><strong>Junior Web Developer</strong></p>
+      <p>HTML • CSS • JavaScript</p>
+      <p>Based in UK · Open to freelance & junior roles</p>
 
-      <a class="email"
-         href="mailto:hamidrezaahmadiuk@gmail.com">
-         Email
-      </a>
+      <div class="buttons">
+        <a class="btn btn-whatsapp" 
+           href="https://api.whatsapp.com/send/?phone=447707546682&text=Hi%20Hamid,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project." 
+           target="_blank">
+          WhatsApp
+        </a>
 
-      <a class="projects"
-         href="#projects">
-         Projects
-      </a>
+        <a class="btn btn-email" 
+           href="mailto:hamidrezaahmadiuk@gmail.com">
+          Email
+        </a>
+
+        <a class="btn btn-projects" href="#projects">
+          Projects
+        </a>
+      </div>
+
+      <footer>
+        © 2025 Hamid Ahmadi
+      </footer>
     </div>
-
-    <footer>
-      Based in UK • Available for junior & freelance roles
-    </footer>
   </div>
+
 </body>
 </html>
